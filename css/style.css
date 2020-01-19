@@ -39,58 +39,17 @@
     background-color: rgba(0, 0, 0, 0.5);
     position: relative;
     margin: auto;
+    /* curvatura overlay per seguire l'immagine curva */
     border-radius: 6%;
 }
 .milano {
-    /* dimensioni img */
-    width: 300px;
-    height: 200px;
-    /* Ridimensiona l'immagine di sfondo per coprire l'intero contenitore */
-    background-size: cover;
     background-image: url("https://sofitel.accor.com/destinations/imagerie/duomodimilano-milan-600x500-bda2.jpg");
-    position: relative;
-    /* accentra il div .milano */
-    /* con TOP cerco di centrare le 3 foto */
-    /* MODO NON CORRETTO */
-    margin-top: 35px;
-    /* con L e R auto lo accentro */
-    margin-left: auto;
-    margin-right: auto;
-    /* BORDO */
-    border: 4px solid rgba(255,255,255, 0.8);
-    /* curvatura */
-    border-radius: 8%;
 }
 .roma {
-    /* dimensioni img */
-    width: 300px;
-    height: 200px;
-    /* Ridimensiona l'immagine di sfondo per coprire l'intero contenitore */
-    background-size: cover;
     background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia-cdn.tripadvisor.com%2Fmedia%2Fattractions-splice-spp-540x360%2F07%2Faa%2F32%2F2f.jpg&f=1&nofb=1");
-    position: relative;
-    /* accentra il div .milano */
-    margin: auto;
-    /* BORDO */
-    border: 4px solid rgba(255,255,255, 0.8);
-    border-radius: 8%;
-    margin-top: 4px;
-    margin-bottom: 4px;
 }
 .venezia {
-    /* dimensioni img */
-    width: 300px;
-    height: 200px;
-    /* Ridimensiona l'immagine di sfondo per coprire l'intero contenitore */
-    background-size: cover;
     background-image: url("https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.macosxtips.co.uk%2Fgeeklets%2Fmodules%2Fupload%2Fattachments%2FVenice%2520Wallpaper.jpg&f=1&nofb=1");
-    position: relative;
-    /* accentra il div .milano */
-    margin: auto;
-    /* BORDO */
-    border: 4px solid rgba(255,255,255, 0.8);
-    /* arrotondare i bordi */
-    border-radius: 8%;
 }
 .testo {
     /* centriamo il testo */
@@ -101,21 +60,39 @@
     /* colore per vederlo meglio */
     color: white;
 }
-/* prima ".contenitore" per selezionare immagine e cuore / prima display NONE poi BLOCK */
-.cuore {
+.victory {
+    /* in relazione al suo contenitore */
+    position: absolute;
+    /* centrare like */
+    left: 50%;
+    right: 50%;
+    bottom: 10px;
+    /* strumento per far "scomparire il victory ed usare :hover" */
     display: none;
     font-size: 40px;
     color: red;
+    /* lo faccio salire di un livello per togliere overlay dal victory*/
+    z-index: 1;
 }
-.milano:hover .cuore {
+.foto:hover .victory {
     display: block;
 }
-.roma:hover .cuore {
-    display: block;
+.foto {
+    /* dimensioni img */
+    width: 300px;
+    height: 200px;
+    /* BORDO */
+    border: 4px solid rgba(255,255,255, 0.8);
+    /* curavatura */
+    border-radius: 8%;
+    position: relative;
+    /* accentra il div .milano */
+    margin: auto;
+    /* centratura a mano per TOP e BOTTOM trovare in modo + semplice */
+    top: 45px;
+    /* Ridimensiona l'immagine di sfondo per coprire l'intero contenitore */
+    background-size: cover;
 }
-.venezia:hover .cuore {
-    display: block;
+.scatola:nth-child(2) {
+    background-color: red;
 }
-
-/* DA RIVEDERE E CHIEDERE, CENTRATURA IMMAGINI / SPAZIO TRA LORO
-/ TROPPE RIPETIZIONE NELLA SCRITTURA DEL CSS, IMPARIAMO DAI PIGRI :) */
